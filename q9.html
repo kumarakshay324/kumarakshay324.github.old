@@ -774,18 +774,9 @@ img {max-width : 100%}
 
 	<span class="k">for</span> <span class="n">d1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_lidar_1m</span><span class="p">)):</span>
 
-		<span class="k">if</span> <span class="p">(</span><span class="n">data_lidar_1m</span><span class="p">[</span><span class="n">d1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">):</span>
-			<span class="n">d1_lidar_bias</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">lidar_1m_bias</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="n">d1_lidar_bias</span> <span class="o">=</span>  <span class="n">lidar_1m_bias</span>
-
-		<span class="k">if</span> <span class="p">(</span><span class="n">data_ultrasound_1m</span><span class="p">[</span><span class="n">d1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">):</span>
-			<span class="n">d1_ultrasound_bias</span> <span class="o">=</span>   <span class="n">ultrasound_1m_bias</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="n">d1_ultrasound_bias</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">ultrasound_1m_bias</span>
-
-		<span class="c1"># d1_lidar_bias =  lidar_1m_bias</span>
-		<span class="c1"># d1_ultrasound_bias = ultrasound_1m_bias</span>
+		
+		<span class="c1"> d1_lidar_bias =  lidar_1m_bias</span>
+		<span class="c1"> d1_ultrasound_bias = ultrasound_1m_bias</span>
 	
 				
 		<span class="n">temp1</span> <span class="o">=</span> <span class="n">var_combined_1m</span><span class="o">*</span><span class="p">(((</span><span class="n">data_lidar_1m</span><span class="p">[</span><span class="n">d1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span> <span class="n">d1_lidar_bias</span><span class="p">)</span> <span class="o">/</span><span class="n">lidar_1m_var</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">data_ultrasound_1m</span><span class="p">[</span><span class="n">d1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">d1_ultrasound_bias</span><span class="p">)</span><span class="o">/</span><span class="n">ultrasound_1m_var</span><span class="p">))</span>
@@ -793,18 +784,9 @@ img {max-width : 100%}
 
 	<span class="k">for</span> <span class="n">d2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_lidar_2m</span><span class="p">)):</span>
 
-		<span class="k">if</span> <span class="p">(</span><span class="n">data_lidar_2m</span><span class="p">[</span><span class="n">d2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">200</span><span class="p">):</span>
-			<span class="n">d2_lidar_bias</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">lidar_2m_bias</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="n">d2_lidar_bias</span> <span class="o">=</span>  <span class="n">lidar_2m_bias</span>
-
-		<span class="k">if</span> <span class="p">(</span><span class="n">data_ultrasound_2m</span><span class="p">[</span><span class="n">d2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">200</span><span class="p">):</span>
-			<span class="n">d2_ultrasound_bias</span> <span class="o">=</span>   <span class="n">ultrasound_2m_bias</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="n">d2_ultrasound_bias</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">ultrasound_2m_bias</span>
-
-		<span class="c1"># d2_lidar_bias = lidar_2m_bias</span>
-		<span class="c1"># d2_ultrasound_bias = ultrasound_2m_bias</span>
+		
+		<span class="c1"> d2_lidar_bias = lidar_2m_bias</span>
+		<span class="c1"> d2_ultrasound_bias = ultrasound_2m_bias</span>
 		
 		<span class="n">temp2</span> <span class="o">=</span> <span class="n">var_combined_2m</span><span class="o">*</span><span class="p">((</span><span class="n">data_lidar_2m</span><span class="p">[</span><span class="n">d2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">d2_lidar_bias</span><span class="p">)</span> <span class="o">/</span><span class="n">lidar_2m_var</span> <span class="o">+</span> <span class="p">(</span><span class="n">data_ultrasound_2m</span><span class="p">[</span><span class="n">d2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">d2_ultrasound_bias</span><span class="p">)</span><span class="o">/</span><span class="n">ultrasound_2m_var</span><span class="p">)</span>
 		<span class="n">data_2m_fused</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp2</span><span class="p">)</span>
